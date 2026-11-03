@@ -339,11 +339,47 @@
         });
     };
 
-    const save = (mutator) => {
+    const save = async (mutator) => {
         const d = window.ObrazStore.load();
         mutator(d);
         lastSnapshot = '';
-        window.ObrazStore.save(d);
+        window.ObrazStore.save(d); // Сохраняет в браузере
+
+        // === ОТПРАВЛЯЕМ В GITHUB ===
+        try {
+            const octokit = new Octokit({
+                auth: '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' // Твой токен
+            });
+
+            let sha = null;
+            try {
+                // Пытаемся узнать текущий SHA файла (если он есть)
+                const { data } = await octokit.rest.repos.getContent({
+                    owner: 'glubkov2020-netizen',
+                    repo: '-_-',
+                    path: 'data.json'
+                });
+                sha = data.sha;
+            } catch (e) {
+                // Файла еще нет, это нормально
+            }
+
+            // Отправляем новые данные
+            await octokit.rest.repos.createOrUpdateFileContents({
+                owner: 'glubkov2020-netizen',
+                repo: '-_-',
+                path: 'data.json',
+                message: 'Обновление через админку',
+                content: btoa(unescape(encodeURIComponent(JSON.stringify(d, null, 2)))),
+                sha: sha
+            });
+            
+            console.log('УСПЕХ! Файл сохранен в GitHub.');
+            alert('Данные успешно сохранены в GitHub!');
+        } catch (error) {
+            console.error('ОШИБКА GITHUB:', error);
+            alert('Ошибка сохранения в GitHub: ' + error.message);
+        }
     };
 
     const wire = () => {
