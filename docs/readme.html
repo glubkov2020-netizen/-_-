@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Технический паспорт сайта — ОбразЯ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="doc-style.css">
+</head>
+<body>
+    <header class="doc-header">
+        <div class="doc-header__inner">
+            <a href="welcome.html" class="doc-logo">
+                <span class="doc-logo__mark"></span>
+                <span>Образ<span>Я</span></span>
+            </a>
+            <span class="doc-header__tag">Технический паспорт</span>
+            <button class="doc-header__print" onclick="window.print()">Скачать / распечатать</button>
+        </div>
+    </header>
+
+    <main class="doc-main">
+        <div class="doc-hero">
+            <p class="doc-hero__eyebrow">Технический паспорт · Версия 1.0</p>
+            <h1 class="doc-hero__title">Всё, что есть на сайте — в одном документе</h1>
+            <p class="doc-hero__text">Полное описание всех страниц, блоков, элементов и возможностей. Это первая версия — она подлежит правке. Всё, что здесь описано, можно менять, дополнять и переделывать так, как удобно вам.</p>
+            <div class="doc-hero__meta">
+                <span><strong>Проект:</strong> ОбразЯ — образовательный консультант</span>
+                <span><strong>Версия:</strong> 1.0</span>
+                <span><strong>Хостинг:</strong> GitHub Pages</span>
+                <span><strong>Статус:</strong> демо / прототип</span>
+            </div>
+        </div>
+
+        <div class="doc-layout">
+            <aside class="doc-toc">
+                <p class="doc-toc__title">Содержание</p>
+                <ul class="doc-toc__list">
+                    <li><a href="#overview">Обзор</a></li>
+                    <li><a href="#pages">Страницы сайта</a></li>
+                    <li><a href="#blocks">Блоки и элементы</a></li>
+                    <li><a href="#features">Возможности</a></li>
+                    <li><a href="#admin">Админ-панель</a></li>
+                    <li><a href="#tech">Технические детали</a></li>
+                    <li><a href="#limits">Ограничения v1.0</a></li>
+                    <li><a href="#plan">План развития</a></li>
+                </ul>
+            </aside>
+
+            <article>
+                <section class="doc-section" id="overview">
+                    <div class="doc-section__head">
+                        <span class="doc-section__num">01</span>
+                        <h2 class="doc-section__title">Обзор</h2>
+                    </div>
+                    <p>Сайт образовательного консультанта — пятистраничный лендинг с админ-панелью, встроенным поиском, чат-ботом, тёмной темой и cookie-баннером. Сделан с нуля: HTML, CSS, JavaScript. Без конструкторов, без фреймворков, без базы данных.</p>
+                    <p><strong>Ключевая идея:</strong> вы сами управляете контентом через админ-панель. Я не нужен для рутинных изменений — только для структурных доработок.</p>
+                    <div class="doc-callout doc-callout--accent">
+                        <span class="doc-callout__icon">📌</span>
+                        <p><strong>Это v1.0.</strong> Всё, что описано ниже, — не финальный камень. Любой блок можно переписать, переставить, убрать или добавить. Я жду ваших правок.</p>
+                    </div>
+                </section>
+
+                <section class="doc-section" id="pages">
+                    <div class="doc-section__head">
+                        <span class="doc-section__num">02</span>
+                        <h2 class="doc-section__title">Страницы сайта</h2>
+                    </div>
+                    <table class="doc-table">
+                        <thead><tr><th>Страница</th><th>Файл</th><th>Назначение</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Главная</strong></td><td>index.html</td><td>Основной лендинг: оффер, направления, услуги, подход, FAQ, форма записи.</td></tr>
+                            <tr><td><strong>О себе</strong></td><td>about.html</td><td>Экспертиза, подход, ценности, фотографии.</td></tr>
+                            <tr><td><strong>Журнал</strong></td><td>journal.html</td><td>Новости, заметки, разборы кейсов.</td></tr>
+                            <tr><td><strong>Отзывы</strong></td><td>reviews.html</td><td>Отзывы клиентов и форма для новых отзывов.</td></tr>
+                            <tr><td><strong>Документы</strong></td><td>documents.html</td><td>Юридический раздел: политика, соглашения, реквизиты.</td></tr>
+                        </tbody>
+                    </table>
+                    <p>На каждой странице — единая шапка с навигацией, поиском, переключателем темы, кнопкой записи и бургер-меню на мобильном. Внизу — единый футер.</p>
+                </section>
+
+                <section class="doc-section" id="blocks">
+                    <div class="doc-section__head">
+                        <span class="doc-section__num">03</span>
+                        <h2 class="doc-section__title">Блоки и элементы</h2>
+                    </div>
+
+                    <h3>Шапка сайта</h3>
+                    <ul>
+                        <li><strong>Логотип</strong> — анимированный: дуги вращаются, ядро пульсирует, на hover появляются орбиты.</li>
+                        <li><strong>Навигация</strong> — 6 разделов + кнопка «Записаться».</li>
+                        <li><strong>Поиск</strong> — кнопка «Поиск ⌘K», модальное окно с результатами по всему сайту.</li>
+                        <li><strong>Переключатель темы</strong> — светлая, тёмная, авто (по времени суток устройства).</li>
+                        <li><strong>Бургер</strong> — на мобильных открывает меню.</li>
+                    </ul>
+
+                    <h3>Главная страница</h3>
+                    <table class="doc-table">
+                        <thead><tr><th>Блок</th><th>Что внутри</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Hero</strong></td><td>Плашка, заголовок, подзаголовок, две кнопки, бейджи опыта, фото с подписью.</td></tr>
+                            <tr><td><strong>О себе</strong></td><td>Заголовок, два абзаца, три статистических показателя.</td></tr>
+                            <tr><td><strong>Направления</strong></td><td>Три карточки: дети, подростки, взрослые. Заголовок, текст, результат.</td></tr>
+                            <tr><td><strong>Услуги</strong></td><td>Три карточки с тегами, заголовками и описанием.</td></tr>
+                            <tr><td><strong>Процесс</strong></td><td>Четыре шага: диагностика, анализ, стратегия, сопровождение.</td></tr>
+                            <tr><td><strong>Результат</strong></td><td>Тёмный блок с обещанием результата и кнопкой.</td></tr>
+                            <tr><td><strong>FAQ</strong></td><td>4 вопроса-аккордеона с ответами.</td></tr>
+                            <tr><td><strong>Контакты</strong></td><td>Ссылки на Telegram, WhatsApp, e-mail и форма заявки.</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Страница «О себе»</h3>
+                    <ul>
+                        <li>Заголовок и подзаголовок.</li>
+                        <li>Три фотографии (две портретные, одна горизонтальная).</li>
+                        <li>Биография: кто я, мой подход, список достижений.</li>
+                        <li>Три карточки ценностей.</li>
+                        <li>Форма обратной связи.</li>
+                    </ul>
+
+                    <h3>Страница «Журнал»</h3>
+                    <ul>
+                        <li>Сетка карточек новостей: дата, заголовок, краткое описание, кнопка «Читать».</li>
+                        <li>Анимированная «обложка» каждой карточки.</li>
+                    </ul>
+
+                    <h3>Страница «Отзывы»</h3>
+                    <ul>
+                        <li>Сетка карточек: звёздный рейтинг, текст, имя, роль.</li>
+                        <li>Форма отправки нового отзыва — попадает в админку на модерацию.</li>
+                    </ul>
+
+                    <h3>Страница «Документы»</h3>
+                    <ul>
+                        <li>Список файлов с иконками и кнопкой «Открыть» — открывается в модальном окне без перехода на другую страницу.</li>
+                        <li>Раздел «Реквизиты» с официальной информацией.</li>
+                    </ul>
+
+                    <h3>Подвал</h3>
+                    <ul>
+                        <li>Логотип, краткое описание, навигация, контакты, юридическая ссылка.</li>
+                    </ul>
+                </section>
+
+                <section class="doc-section" id="features">
+                    <div class="doc-section__head">
+                        <span class="doc-section__num">04</span>
+                        <h2 class="doc-section__title">Возможности</h2>
+                    </div>
+                    <div class="doc-cards">
+                        <div class="doc-card">
+                            <div class="doc-card__icon">🔍</div>
+                            <p class="doc-card__title">Поиск по сайту</p>
+                            <p class="doc-card__text">Открывается по Ctrl/Cmd+K или кнопке в шапке. Ищет по всем страницам и секциям, подсвечивает совпадения, ведёт на нужный блок.</p>
+                        </div>
+                        <div class="doc-card">
+                            <div class="doc-card__icon">💬</div>
+                            <p class="doc-card__title">Чат-бот</p>
+                            <p class="doc-card__text">Сценарный помощник: отвечает на вопросы про услуги, цены, документы, запись. Понимает контекст, помнит имя, ведёт историю диалога. Кнопка «Развернуть» делает панель большой.</p>
+                        </div>
+                        <div class="doc-card">
+                            <div class="doc-card__icon">🌗</div>
+                            <p class="doc-card__title">Тёмная тема</p>
+                            <p class="doc-card__text">Три режима: светлая, тёмная и авто (переключается по системным настройкам устройства). Выбор сохраняется.</p>
+                        </div>
+                        <div class="doc-card">
+                            <div class="doc-card__icon">🍪</div>
+                            <p class="doc-card__title">Cookie-баннер</p>
+                            <p class="doc-card__text">При первом визите — красивая плашка с выбором: принять всё, только необходимое, отказаться. Показывается один раз.</p>
+                        </div>
+                        <div class="doc-card">
+                            <div class="doc-card__icon">📊</div>
+                            <p class="doc-card__title">Статистика</p>
+                            <p class="doc-card__text">В админке — вкладка «Статистика» с подключением GoatCounter: бесплатный, без cookie, GDPR-friendly счётчик.</p>
+                        </div>
+                        <div class="doc-card">
+                            <div class="doc-card__icon">⚙️</div>
+                            <p class="doc-card__title">Админ-панель</p>
+                            <p class="doc-card__text">10 вкладок: главный экран, о себе, направления, услуги, процесс, FAQ, журнал, отзывы, контакты, статистика, файл данных.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="doc-section" id="admin">
+                    <div class="doc-section__head">
+                        <span class="doc-section__num">05</span>
+                        <h2 class="doc-section__title">Админ-панель</h2>
+                    </div>
+                    <p>Доступ — через шестерёнку в правом нижнем углу. Логин <code>admin</code>, пароль <code>obraz2025</code> (демо; заменю на боевой).</p>
+                    <p>Полная пошаговая инструкция — в отдельном файле:</p>
+                    <a href="admin-guide.html" class="doc-btn">Открыть инструкцию по админке →</a>
+                </section>
+
+                <section class="doc-section" id="tech">
+                    <div class="doc-section__head">
+                        <span class="doc-section__num">06</span>
+                        <h2 class="doc-section__title">Технические детали</h2>
+                    </div>
+                    <table class="doc-table">
+                        <thead><tr><th>Параметр</th><th>Значение</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Стек</strong></td><td>Чистый HTML + CSS + JavaScript. Без фреймворков и сборки.</td></tr>
+                            <tr><td><strong>Хостинг</strong></td><td>GitHub Pages (бесплатно, не падает, не требует обслуживания).</td></tr>
+                            <tr><td><strong>Шрифты</strong></td><td>Google Fonts: Unbounded (заголовки), Manrope (текст).</td></tr>
+                            <tr><td><strong>Адаптив</strong></td><td>Мобильный, планшетный, десктопный. Оптимизировано под телефоны.</td></tr>
+                            <tr><td><strong>Тёмная тема</strong></td><td>Через CSS-переменные + localStorage для сохранения выбора.</td></tr>
+                            <tr><td><strong>Хранение контента</strong></td><td>localStorage в админке + экспорт/импорт JSON. Синхронизация между устройствами — через CMS (следующий этап).</td></tr>
+                            <tr><td><strong>Анимации</strong></td><td>Только transform и opacity — для плавности и нулевой нагрузки на GPU.</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Структура файлов</h3>
+                    <ul>
+                        <li><code>index.html</code>, <code>about.html</code>, <code>journal.html</code>, <code>reviews.html</code>, <code>documents.html</code> — страницы сайта.</li>
+                        <li><code>css/</code> — 14 файлов стилей по блокам (переменные, база, компоненты, темы, админка и т.д.).</li>
+                        <li><code>js/</code> — 16 скриптов: данные, рендер, админка, бот, поиск, темы, cookie, статистика.</li>
+                        <li><code>assets/</code> — изображения и PDF-документы.</li>
+                        <li><code>docs/</code> — эта документация.</li>
+                    </ul>
+                </section>
+
+                <section class="doc-section" id="limits">
+                    <div class="doc-section__head">
+                        <span class="doc-section__num">07</span>
+                        <h2 class="doc-section__title">Ограничения v1.0</h2>
+                    </div>
+                    <div class="doc-callout doc-callout--warn">
+                        <span class="doc-callout__icon">⚠️</span>
+                        <p><strong>Честно о том, что пока не работает в полную силу.</strong> Это не минусы — это точки роста, которые я закрываю в следующих версиях.</p>
+                    </div>
+                    <ul>
+                        <li><strong>Админ-панель без синхронизации.</strong> Изменения сохраняются в конкретном браузере. Чтобы перенести на другое устройство — есть кнопка «Скачать / загрузить data.json».</li>
+                        <li><strong>Формы не отправляют письма.</strong> Заявки сейчас принимаются локально. Подключу Formspree, чтобы заявки приходили на почту.</li>
+                        <li><strong>Чат-бот — сценарный.</strong> Отвечает по ключевым словам из текстов сайта. Для настоящего AI-бота нужен сервер и API-ключ.</li>
+                        <li><strong>Статистика — после подключения GoatCounter.</strong> Пока счётчик не активирован, на месте цифр — честная заглушка.</li>
+                        <li><strong>Документы — демо-HTML.</strong> Финальные PDF от юриста подставлю в раздел «Документы».</li>
+                    </ul>
+                </section>
+
+                <section class="doc-section" id="plan">
+                    <div class="doc-section__head">
+                        <span class="doc-section__num">08</span>
+                        <h2 class="doc-section__title">План развития</h2>
+                    </div>
+                    <ul class="doc-steps">
+                        <li>
+                            <strong>Синхронизация контента</strong>
+                            <p>Подключение Decap CMS: вы публикуете новости и отзывы из админки, они появляются на сайте у всех посетителей.</p>
+                        </li>
+                        <li>
+                            <strong>Рабочие формы</strong>
+                            <p>Formspree: заявки и отзывы приходят на почту. Спам-защита, капча при необходимости.</p>
+                        </li>
+                        <li>
+                            <strong>SEO и метаданные</strong>
+                            <p>Заголовки страниц, OG-картинки для соцсетей, микроразметка, sitemap, favicon.</p>
+                        </li>
+                        <li>
+                            <strong>AI-бот</strong>
+                            <p>Настоящий ассистент с пониманием свободных вопросов — через OpenAI API или DeepSeek.</p>
+                        </li>
+                        <li>
+                            <strong>Личный кабинет</strong>
+                            <p>Если понадобится: расписание занятий, материалы, домашние задания для клиентов.</p>
+                        </li>
+                    </ul>
+
+                    <div class="doc-callout doc-callout--accent">
+                        <span class="doc-callout__icon">🎯</span>
+                        <p><strong>Всё подлежит правке.</strong> Ни один блок, текст или цвет не является финальным. Чем больше обратной связи на этом этапе — тем точнее сайт попадёт в вас и вашу аудиторию.</p>
+                    </div>
+                </section>
+            </article>
+        </div>
+
+        <div class="doc-footer">
+            <span>© 2025 ОбразЯ · Технический паспорт · Версия 1.0</span>
+            <span>Документ актуален на момент передачи проекта</span>
+        </div>
+    </main>
+</body>
+</html>

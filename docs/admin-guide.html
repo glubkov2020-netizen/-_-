@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Инструкция по админ-панели — ОбразЯ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="doc-style.css">
+</head>
+<body>
+    <header class="doc-header">
+        <div class="doc-header__inner">
+            <a href="welcome.html" class="doc-logo">
+                <span class="doc-logo__mark"></span>
+                <span>Образ<span>Я</span></span>
+            </a>
+            <span class="doc-header__tag">Инструкция · Админка</span>
+            <button class="doc-header__print" onclick="window.print()">Скачать / распечатать</button>
+        </div>
+    </header>
+
+    <main class="doc-main">
+        <div class="doc-hero">
+            <p class="doc-hero__eyebrow">Инструкция · Админ-панель</p>
+            <h1 class="doc-hero__title">Как управлять сайтом самостоятельно</h1>
+            <p class="doc-hero__text">Пошаговая инструкция: как войти, что менять, как сохранять. Всё, что нужно, чтобы держать сайт в актуальном состоянии — без программиста.</p>
+            <div class="doc-hero__meta">
+                <span><strong>Доступ:</strong> шестерёнка в правом нижнем углу</span>
+                <span><strong>Демо-логин:</strong> admin</span>
+                <span><strong>Демо-пароль:</strong> obraz2025</span>
+            </div>
+        </div>
+
+        <div class="doc-layout">
+            <aside class="doc-toc">
+                <p class="doc-toc__title">Содержание</p>
+                <ul class="doc-toc__list">
+                    <li><a href="#login">Как войти</a></li>
+                    <li><a href="#interface">Как устроена админка</a></li>
+                    <li><a href="#tabs">10 вкладок</a></li>
+                    <li><a href="#howto">Как редактировать</a></li>
+                    <li><a href="#reviews">Модерация отзывов</a></li>
+                    <li><a href="#stats">Статистика</a></li>
+                    <li><a href="#export">Экспорт / импорт</a></li>
+                    <li><a href="#safety">Безопасность</a></li>
+                    <li><a href="#faq">Вопросы</a></li>
+                </ul>
+            </aside>
+
+            <article>
+                <section class="doc-section" id="login">
+                    <div class="doc-section__head">
+                        <span class="doc-section__num">01</span>
+                        <h2 class="doc-section__title">Как войти в админ-панель</h2>
+                    </div>
+                    <ol class="doc-steps">
+                        <li>
+                            <strong>Откройте любую страницу сайта</strong>
+                            <p>Главную, «О себе», «Журнал» — неважно. Админка доступна отовсюду.</p>
+                        </li>
+                        <li>
+                            <strong>Найдите шестерёнку</strong>
+                            <p>Маленький серый значок ⚙ в правом нижнем углу экрана. Он полупрозрачный — специально, чтобы посетители его не замечали. При наведении становится видимым.</p>
+                        </li>
+                        <li>
+                            <strong>Нажмите на неё</strong>
+                            <p>Откроется окно «Вход в админ-панель» с красивым градиентом и анимацией.</p>
+                        </li>
+                        <li>
+                            <strong>Введите логин и пароль</strong>
+                            <p>Демо-доступ: логин <code>admin</code>, пароль <code>obraz2025</code>. После входа вы попадёте в панель управления.</p>
+                        </li>
+                    </ol>
+
+                    <div class="doc-callout doc-callout--accent">
+                        <span class="doc-callout__icon">🔑</span>
+                        <p><strong>Пароль — временный.</strong> На боевой версии я поменяю его на ваш собственный. Пришлите желаемый — установлю.</p>
+                    </div>
+                </section>
+
+                <section class="doc-section" id="interface">
+                    <div class="doc-section__head">
+                        <span class="doc-section__num">02</span>
+                        <h2 class="doc-section__title">Как устроена админка</h2>
+                    </div>
+                    <p>Интерфейс состоит из трёх частей:</p>
+                    <div class="doc-cards">
+                        <div class="doc-card">
+                            <div class="doc-card__icon">📑</div>
+                            <p class="doc-card__title">Вкладки сверху</p>
+                            <p class="doc-card__text">10 вкладок: главный экран, о себе, направления, услуги, процесс, FAQ, журнал, отзывы, контакты, статистика, файл данных. Переключают содержимое.</p>
+                        </div>
+                        <div class="doc-card">
+                            <div class="doc-card__icon">📝</div>
+                            <p class="doc-card__title">Форма редактирования</p>
+                            <p class="doc-card__text">В каждой вкладке — поля: заголовок, текст, теги. Меняете то, что нужно. Внизу — кнопка «Сохранить».</p>
+                        </div>
+                        <div class="doc-card">
+                            <div class="doc-card__icon">📋</div>
+                            <p class="doc-card__title">Список элементов</p>
+                            <p class="doc-card__text">Ниже формы — список всех записей этой вкладки. У каждой: «Изменить» и «Удалить». Кнопка «Добавить» — для новых.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="doc-section" id="tabs">
+                    <div class="doc-section__head">
+                        <span class="doc-section__num">03</span>
+                        <h2 class="doc-section__title">10 вкладок — что меняет каждая</h2>
+                    </div>
+                    <table class="doc-table">
+                        <thead><tr><th>Вкладка</th><th>Что можно изменить</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Главный экран</strong></td><td>Плашку сверху, заголовок, подзаголовок, две кнопки, бейджи опыта, фото, подпись на фото.</td></tr>
+                            <tr><td><strong>О себе</strong></td><td>Заголовок, абзацы, три статистических показателя (цифра + подпись).</td></tr>
+                            <tr><td><strong>Направления</strong></td><td>Три карточки: заголовок, описание, результат. Можно добавлять новые.</td></tr>
+                            <tr><td><strong>Услуги</strong></td><td>Тег, заголовок, описание. Можно добавлять новые услуги.</td></tr>
+                            <tr><td><strong>Процесс</strong></td><td>Шаги работы: номер, название, описание.</td></tr>
+                            <tr><td><strong>FAQ</strong></td><td>Вопросы и ответы. Порядок, количество — на ваше усмотрение.</td></tr>
+                            <tr><td><strong>Журнал</strong></td><td>Новости: дата, заголовок, краткое описание.</td></tr>
+                            <tr><td><strong>Отзывы</strong></td><td>Модерация, публикация, редактирование, удаление.</td></tr>
+                            <tr><td><strong>Контакты</strong></td><td>E-mail, Telegram, WhatsApp, тексты блока «Записаться».</td></tr>
+                            <tr><td><strong>Статистика</strong></td><td>Подключение GoatCounter и просмотр реальных визитов.</td></tr>
+                            <tr><td><strong>Файл данных</strong></td><td>Экспорт и импорт всех данных, сброс к демо.</td></tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section class="doc-section" id="howto">
+                    <div class="doc-section__head">
+                        <span class="doc-section__num">04</span>
+                        <h2 class="doc-section__title">Как редактировать</h2>
+                    </div>
+
+                    <h3>Изменить текст</h3>
+                    <ol class="doc-steps">
+                        <li><strong>Выберите вкладку.</strong><p>Например, «Главный экран».</p></li>
+                        <li><strong>Найдите нужное поле.</strong><p>Заголовок, подзаголовок — названия говорят сами за себя.</p></li>
+                        <li><strong>Введите новый текст.</strong><p>Можно копировать-вставлять из документа.</p></li>
+                        <li><strong>Нажмите «Сохранить».</strong><p>Сверху выскочит плашка «Изменения сохранены». Сайт обновится мгновенно.</p></li>
+                    </ol>
+
+                    <h3>Добавить новую карточку</h3>
+                    <p>Например, новую услугу. Внизу вкладки «Услуги» — форма для новой записи:</p>
+                    <ol class="doc-steps">
+                        <li><strong>Заполните поля.</strong><p>Тег, заголовок, описание.</p></li>
+                        <li><strong>Нажмите «Добавить услугу».</strong><p>Карточка появится в списке и на сайте.</p></li>
+                    </ol>
+
+                    <h3>Изменить существующую карточку</h3>
+                    <p>В списке нажмите «Изменить» — данные подставятся в форму. Меняйте и сохраняйте.</p>
+
+                    <h3>Удалить</h3>
+                    <p>Кнопка «Удалить» рядом с записью. Никаких подтверждений — просто исчезает. Если случайно удалили — верните через «Добавить».</p>
+
+                    <div class="doc-callout">
+                        <span class="doc-callout__icon">💡</span>
+                        <p><strong>Совет.</strong> Если что-то пошло не так — нажмите «Файл данных» → «Скачать data.json». Это резервная копия на случай ошибки.</p>
+                    </div>
+                </section>
+
+                <section class="doc-section" id="reviews">
+                    <div class="doc-section__head">
+                        <span class="doc-section__num">05</span>
+                        <h2 class="doc-section__title">Модерация отзывов</h2>
+                    </div>
+                    <p>Отзывы, которые приходят через форму на сайте, попадают в админку со статусом <strong>«на модерации»</strong>. Они не видны посетителям, пока вы их не одобрите.</p>
+                    <ol class="doc-steps">
+                        <li><strong>Откройте вкладку «Отзывы».</strong><p>Увидите список с пометкой статуса.</p></li>
+                        <li><strong>Нажмите «Опубликовать».</strong><p>Отзыв появится на странице сайта. Статус изменится на «опубликован».</p></li>
+                        <li><strong>Нажмите «Снять»</strong> — чтобы скрыть снова, если что-то не так.</li>
+                        <li><strong>«Удалить»</strong> — если отзыв спам или неуместен.</li>
+                    </ol>
+                </section>
+
+                <section class="doc-section" id="stats">
+                    <div class="doc-section__head">
+                        <span class="doc-section__num">06</span>
+                        <h2 class="doc-section__title">Статистика посещений</h2>
+                    </div>
+                    <p>Использую GoatCounter — бесплатный, лёгкий, GDPR-friendly счётчик. Без cookie, без сбора персональных данных.</p>
+                    <ol class="doc-steps">
+                        <li><strong>Зарегистрируйтесь на GoatCounter.</strong><p>Кнопка «Регистрация» есть в админке. Займёт 1 минуту. Получите поддомен, например <code>obraz</code>.</p></li>
+                        <li><strong>Введите код в админке.</strong><p>Вкладка «Статистика» → поле «Код GoatCounter» → впишите поддомен без <code>.goatcounter.com</code> → «Подключить».</p></li>
+                        <li><strong>Смотрите данные.</strong><p>Здесь же, в админке. После первых визитов появятся реальные цифры.</p></li>
+                    </ol>
+
+                    <div class="doc-callout doc-callout--accent">
+                        <span class="doc-callout__icon">📊</span>
+                        <p><strong>Честно:</strong> пока счётчик не подключён, в админке заглушка. Никаких «нарисованных» цифр — только реальные данные.</p>
+                    </div>
+                </section>
+
+                <section class="doc-section" id="export">
+                    <div class="doc-section__head">
+                        <span class="doc-section__num">07</span>
+                        <h2 class="doc-section__title">Экспорт / импорт данных</h2>
+                    </div>
+                    <p>На вкладке «Файл данных»:</p>
+                    <ul>
+                        <li><strong>«Скачать data.json»</strong> — сохраняет всё содержимое в файл на вашем компьютере.</li>
+                        <li><strong>«Загрузить data.json»</strong> — восстанавливает контент из файла. Полезно, если перешли на другое устройство.</li>
+                        <li><strong>«Сбросить к демо-данным»</strong> — возвращает первоначальный вид. Всё ваше пропадёт.</li>
+                    </ul>
+                    <div class="doc-callout">
+                        <span class="doc-callout__icon">💾</span>
+                        <p><strong>Рекомендую делать резервную копию раз в неделю.</strong> Кнопка — 2 секунды, спокойствие — надолго.</p>
+                    </div>
+                </section>
+
+                <section class="doc-section" id="safety">
+                    <div class="doc-section__head">
+                        <span class="doc-section__num">08</span>
+                        <h2 class="doc-section__title">Безопасность</h2>
+                    </div>
+                    <ul>
+                        <li><strong>Админка скрыта.</strong> Посетители её не видят — только шестерёнку, которая никак не выдаёт функционал.</li>
+                        <li><strong>Пароль — только у вас.</strong> Не делитесь им. Если нужно сменить — скажите, поменяю.</li>
+                        <li><strong>Данные не уходят наружу.</strong> Всё хранится в вашем браузере. Никаких серверов, никакой слежки.</li>
+                        <li><strong>Cookie-баннер</strong> — формальность и открытость: посетитель сам решает, разрешать ли аналитику.</li>
+                    </ul>
+                </section>
+
+                <section class="doc-section" id="faq">
+                    <div class="doc-section__head">
+                        <span class="doc-section__num">09</span>
+                        <h2 class="doc-section__title">Частые вопросы</h2>
+                    </div>
+
+                    <h4>Изменения не появляются на сайте. Что делать?</h4>
+                    <p>Обновите страницу (Cmd+R или F5). Если всё равно нет — проверьте, что нажали «Сохранить», и плашка «Изменения сохранены» появилась.</p>
+
+                    <h4>Как перенести изменения на другой компьютер?</h4>
+                    <p>«Файл данных» → «Скачать data.json» на первом устройстве. Открыть админку на втором → «Загрузить data.json». Всё.</p>
+
+                    <h4>Можно ли отредактировать фото?</h4>
+                    <p>Пока — заменить файл в папке <code>assets/images/</code> с тем же именем. Или пришлите новое фото — поставлю сам.</p>
+
+                    <h4>Что делать, если всё сломалось?</h4>
+                    <p>«Файл данных» → «Сбросить к демо-данным». Всё вернётся к первоначальному виду. Ваши тексты и карточки сохранятся, если вы делали экспорт.</p>
+
+                    <h4>Можно ли добавить новые страницы?</h4>
+                    <p>Да, но это уже разработка — скажите, что нужно, я оценю и сделаю.</p>
+
+                    <div class="doc-callout doc-callout--accent">
+                        <span class="doc-callout__icon">🙋</span>
+                        <p><strong>Если что-то непонятно — пишите.</strong> Не мучайтесь в одиночку. Вопросы — это нормально, для этого я и делаю документацию.</p>
+                    </div>
+                </section>
+            </article>
+        </div>
+
+        <div class="doc-footer">
+            <span>© 2025 ОбразЯ · Инструкция по админ-панели · Версия 1.0</span>
+            <span>Обновляется по мере добавления функций</span>
+        </div>
+    </main>
+</body>
+</html>

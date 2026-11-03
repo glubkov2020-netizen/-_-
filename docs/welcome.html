@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добро пожаловать — ОбразЯ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="doc-style.css">
+</head>
+<body>
+    <header class="doc-header">
+        <div class="doc-header__inner">
+            <a href="#" class="doc-logo">
+                <span class="doc-logo__mark"></span>
+                <span>Образ<span>Я</span></span>
+            </a>
+            <span class="doc-header__tag">Приветствие</span>
+            <button class="doc-header__print" onclick="window.print()">Скачать / распечатать</button>
+        </div>
+    </header>
+
+    <main class="doc-main">
+        <div class="doc-hero">
+            <p class="doc-hero__eyebrow">Добро пожаловать</p>
+            <h1 class="doc-hero__title">Ваш сайт готов к первому знакомству</h1>
+            <p class="doc-hero__text">Это короткое письмо — для вас. Спасибо, что доверили мне создание сайта. Здесь я коротко рассказываю, что вы получаете, как это работает и что можно менять. Без технических терминов — по-человечески.</p>
+            <div class="doc-hero__meta">
+                <span><strong>Проект:</strong> сайт образовательного консультанта</span>
+                <span><strong>Версия:</strong> 1.0</span>
+                <span><strong>Статус:</strong> готов к правкам</span>
+            </div>
+        </div>
+
+        <div class="doc-layout">
+            <aside class="doc-toc">
+                <p class="doc-toc__title">Содержание</p>
+                <ul class="doc-toc__list">
+                    <li><a href="#what">Что вы получаете</a></li>
+                    <li><a href="#how">Как это работает</a></li>
+                    <li><a href="#change">Что можно менять</a></li>
+                    <li><a href="#admin">Админ-панель</a></li>
+                    <li><a href="#next">Что дальше</a></li>
+                </ul>
+            </aside>
+
+            <article>
+                <section class="doc-section" id="what">
+                    <div class="doc-section__head">
+                        <span class="doc-section__num">01</span>
+                        <h2 class="doc-section__title">Что вы получаете</h2>
+                    </div>
+                    <p>Сайт-визитку для образовательного консультанта: с прозрачной подачей, спокойным дизайном и всем, что нужно родителям и подросткам, чтобы принять решение о сотрудничестве.</p>
+                    <div class="doc-cards">
+                        <div class="doc-card">
+                            <div class="doc-card__icon">🏠</div>
+                            <p class="doc-card__title">Главная</p>
+                            <p class="doc-card__text">Ваше предложение, направления работы, услуги, подход, ответы на частые вопросы и форма записи.</p>
+                        </div>
+                        <div class="doc-card">
+                            <div class="doc-card__icon">👤</div>
+                            <p class="doc-card__title">О себе</p>
+                            <p class="doc-card__text">Экспертиза, подход и ценности. Фотографии, которые вызывают доверие.</p>
+                        </div>
+                        <div class="doc-card">
+                            <div class="doc-card__icon">📰</div>
+                            <p class="doc-card__title">Журнал</p>
+                            <p class="doc-card__text">Место для новостей и заметок: разборы кейсов, наблюдения, публикации.</p>
+                        </div>
+                        <div class="doc-card">
+                            <div class="doc-card__icon">💬</div>
+                            <p class="doc-card__title">Отзывы</p>
+                            <p class="doc-card__text">Прозрачные отзывы клиентов с модерацией — без фальши.</p>
+                        </div>
+                        <div class="doc-card">
+                            <div class="doc-card__icon">📄</div>
+                            <p class="doc-card__title">Документы</p>
+                            <p class="doc-card__text">Юридический раздел: политика, соглашения, реквизиты — всё официально.</p>
+                        </div>
+                        <div class="doc-card">
+                            <div class="doc-card__icon">⚙️</div>
+                            <p class="doc-card__title">Админ-панель</p>
+                            <p class="doc-card__text">Скрытая панель, где вы сами меняете тексты, карточки, отзывы и новости.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="doc-section" id="how">
+                    <div class="doc-section__head">
+                        <span class="doc-section__num">02</span>
+                        <h2 class="doc-section__title">Как это работает</h2>
+                    </div>
+                    <p>Сайт полностью статический и живёт на GitHub Pages — это бесплатный хостинг, который не падает и не требует обслуживания. Всё, что вы видите на сайте, хранится в одном файле данных и может быть изменено из админ-панели.</p>
+
+                    <ul class="doc-steps">
+                        <li>
+                            <strong>Открываете сайт</strong>
+                            <p>В любом браузере — на компьютере или телефоне. Ничего устанавливать не нужно.</p>
+                        </li>
+                        <li>
+                            <strong>Заходите в админ-панель</strong>
+                            <p>Нажимаете маленькую шестерёнку в правом нижнем углу, вводите логин и пароль.</p>
+                        </li>
+                        <li>
+                            <strong>Меняете что угодно</strong>
+                            <p>Тексты, фото, карточки, отзывы, FAQ, контакты. Сохранение — одна кнопка.</p>
+                        </li>
+                        <li>
+                            <strong>Смотрите результат</strong>
+                            <p>Изменения видны сразу на всех страницах сайта.</p>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="doc-section" id="change">
+                    <div class="doc-section__head">
+                        <span class="doc-section__num">03</span>
+                        <h2 class="doc-section__title">Что можно менять</h2>
+                    </div>
+                    <p><strong>Всё.</strong> Это первая версия — и она специально сделана так, чтобы вы могли подстроить её под себя без программиста. Что именно:</p>
+                    <table class="doc-table">
+                        <thead><tr><th>Элемент</th><th>Что можно менять</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Главный экран</strong></td><td>Заголовок, подзаголовок, кнопки, фото, бейджи, подпись под фото</td></tr>
+                            <tr><td><strong>О себе</strong></td><td>Абзацы, статистика, фото, список ценностей</td></tr>
+                            <tr><td><strong>Направления</strong></td><td>Карточки: заголовок, описание, результат</td></tr>
+                            <tr><td><strong>Услуги</strong></td><td>Теги, заголовки, описания</td></tr>
+                            <tr><td><strong>Процесс</strong></td><td>Шаги работы: номер, название, описание</td></tr>
+                            <tr><td><strong>FAQ</strong></td><td>Вопросы и ответы</td></tr>
+                            <tr><td><strong>Журнал</strong></td><td>Новости: дата, заголовок, краткое описание</td></tr>
+                            <tr><td><strong>Отзывы</strong></td><td>Публикация, снятие, редактирование, удаление</td></tr>
+                            <tr><td><strong>Контакты</strong></td><td>E-mail, Telegram, WhatsApp, тексты</td></tr>
+                            <tr><td><strong>Документы</strong></td><td>Названия, описания, ссылки на PDF</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div class="doc-callout doc-callout--accent">
+                        <span class="doc-callout__icon">✨</span>
+                        <p><strong>Всё подлежит правке.</strong> Если чего-то не хватает — скажите, добавлю. Если что-то кажется лишним — уберу. Сайт — живой инструмент, а не памятник.</p>
+                    </div>
+                </section>
+
+                <section class="doc-section" id="admin">
+                    <div class="doc-section__head">
+                        <span class="doc-section__num">04</span>
+                        <h2 class="doc-section__title">Админ-панель</h2>
+                    </div>
+                    <p>Это ваш личный пульт управления сайтом. Найти её можно на любой странице: маленькая серая шестерёнка в правом нижнем углу. Она специально не бросается в глаза посетителям.</p>
+
+                    <div class="doc-callout">
+                        <span class="doc-callout__icon">🔑</span>
+                        <p><strong>Демо-доступ:</strong> логин <code>admin</code>, пароль <code>obraz2025</code>. На боевой версии я поменяю его на надёжный — скажите, какой хотите.</p>
+                    </div>
+
+                    <p>Внутри — 10 вкладок: главный экран, о себе, направления, услуги, процесс, FAQ, журнал, отзывы, контакты, статистика. В каждой — форма и список: можно добавлять, редактировать, удалять.</p>
+                    <p>Полная пошаговая инструкция — в отдельном файле <strong>admin-guide.html</strong>. Откройте — там подробно, со скриншотами и подсказками.</p>
+
+                    <a href="admin-guide.html" class="doc-btn">Открыть инструкцию по админке →</a>
+                </section>
+
+                <section class="doc-section" id="next">
+                    <div class="doc-section__head">
+                        <span class="doc-section__num">05</span>
+                        <h2 class="doc-section__title">Что дальше</h2>
+                    </div>
+                    <p>Это первая версия. Я жду от вас обратную связь — и готов менять всё, что покажется неудачным.</p>
+                    <ul>
+                        <li><strong>Тексты</strong> — прочитаю вместе с вами, поправим по вашим замечаниям.</li>
+                        <li><strong>Фото</strong> — пришлите свои, поставлю в нужные блоки.</li>
+                        <li><strong>Контакты</strong> — Telegram, WhatsApp, e-mail: дайте актуальные ссылки — вставлю.</li>
+                        <li><strong>Документы</strong> — финальные PDF от юриста подставлю в раздел «Документы».</li>
+                        <li><strong>Статистика</strong> — подключу бесплатный счётчик, чтобы видеть реальные визиты.</li>
+                        <li><strong>Заявки</strong> — настрою отправку форм на вашу почту.</li>
+                    </ul>
+
+                    <div class="doc-callout doc-callout--accent">
+                        <span class="doc-callout__icon">📬</span>
+                        <p>Если что-то в инструкциях непонятно или хочется обсудить — пишите, я всегда на связи.</p>
+                    </div>
+                </section>
+            </article>
+        </div>
+
+        <div class="doc-footer">
+            <span>© 2025 ОбразЯ · Документация для заказчика · Версия 1.0</span>
+            <span>Приятного пользования ✨</span>
+        </div>
+    </main>
+</body>
+</html>
