@@ -38,7 +38,6 @@
     };
 
     const exportJson = () => JSON.stringify(load(), null, 2);
-
     const importJson = (text) => {
         const parsed = JSON.parse(text);
         const merged = mergeDefaults(parsed);
