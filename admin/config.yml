@@ -2,7 +2,7 @@ backend:
   name: github
   repo: glubkov2020-netizen/-_-
   branch: main
-  base_url: https://obraz-cms-proxy.vercel.app
+  base_url: https://obraz-auth.vercel.app
   auth_endpoint: auth
 
 # Для картинок используем абсолютные пути (с учётом твоего репозитория -_-)
