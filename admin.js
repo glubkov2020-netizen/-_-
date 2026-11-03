@@ -4,7 +4,7 @@
     const SESSION_KEY = 'obraz_admin_session';
     
     // Твои данные для GitHub
-    const TOKEN = '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';
+    const TOKEN = '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';
     const OWNER = 'glubkov2020-netizen';
     const REPO = '-_-';
     const FILE = 'data.json';
