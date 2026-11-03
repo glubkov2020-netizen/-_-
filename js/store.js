@@ -1,6 +1,11 @@
 (function () {
     const KEY = 'obraz_data_v1';
     const EVT = 'obraz:data-changed';
+    
+    // Твой токен и репозиторий
+    const GITHUB_TOKEN = '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'; 
+    const REPO = 'glubkov2020-netizen/-_-';
+    const FILE = 'data.json';
 
     const deepClone = (obj) => JSON.parse(JSON.stringify(obj));
 
@@ -27,9 +32,42 @@
         }
     };
 
-    const save = (data) => {
+    // Сохраняем локально И отправляем в GitHub
+    const save = async (data) => {
+        // 1. Сохраняем в браузер
         localStorage.setItem(KEY, JSON.stringify(data));
         window.dispatchEvent(new CustomEvent(EVT, { detail: data }));
+
+        // 2. Пытаемся отправить в GitHub
+        try {
+            // Сначала узнаем sha файла (он нужен для обновления)
+            const getRes = await fetch(`https://api.github.com/repos/${REPO}/contents/${FILE}`, {
+                headers: { 'Authorization': `token ${GITHUB_TOKEN}` }
+            });
+            let sha = null;
+            if (getRes.ok) {
+                const fileData = await getRes.json();
+                sha = fileData.sha;
+            }
+
+            // Отправляем новые данные
+            const content = btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2))));
+            await fetch(`https://api.github.com/repos/${REPO}/contents/${FILE}`, {
+                method: 'PUT',
+                headers: {
+                    'Authorization': `token ${GITHUB_TOKEN}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    message: 'Обновление данных через админку',
+                    content: content,
+                    sha: sha || undefined
+                })
+            });
+            console.log('Данные успешно сохранены на GitHub!');
+        } catch (e) {
+            console.error('Не удалось сохранить на GitHub:', e);
+        }
     };
 
     const reset = () => {
@@ -38,7 +76,6 @@
     };
 
     const exportJson = () => JSON.stringify(load(), null, 2);
-
     const importJson = (text) => {
         const parsed = JSON.parse(text);
         const merged = mergeDefaults(parsed);
