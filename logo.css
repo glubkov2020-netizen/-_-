@@ -1,0 +1,215 @@
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-dark);
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    position: relative;
+    flex-shrink: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* ===== Марк ===== */
+.logo__mark {
+    position: relative;
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.6s var(--ease-out);
+}
+.logo__mark svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: visible;
+}
+
+/* Дуги */
+.logo__arc {
+    fill: none;
+    stroke-width: 2.6;
+    stroke-linecap: round;
+    transform-origin: 50% 50%;
+}
+.logo__arc--outer {
+    stroke: url(#logoGradA);
+    animation: logoArcOuter 14s linear infinite;
+}
+.logo__arc--mid {
+    stroke: url(#logoGradB);
+    animation: logoArcMid 9s linear infinite reverse;
+}
+.logo__arc--inner {
+    stroke: var(--color-secondary);
+    animation: logoArcInner 6s ease-in-out infinite;
+    opacity: 0.7;
+}
+.logo__core {
+    fill: url(#logoGradCore);
+    transform-origin: 50% 50%;
+    animation: logoCore 3.2s ease-in-out infinite;
+}
+
+@keyframes logoArcOuter {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+@keyframes logoArcMid {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+@keyframes logoArcInner {
+    0%, 100% { opacity: 0.5; transform: rotate(0deg) scale(0.95); }
+    50% { opacity: 0.9; transform: rotate(180deg) scale(1.02); }
+}
+@keyframes logoCore {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.18); }
+}
+
+/* Блик по внешней дуге */
+.logo__shine {
+    fill: none;
+    stroke: rgba(255,255,255,0.9);
+    stroke-width: 2.6;
+    stroke-linecap: round;
+    stroke-dasharray: 8 80;
+    stroke-dashoffset: 0;
+    animation: logoShine 6s linear infinite;
+    opacity: 0.85;
+    mix-blend-mode: screen;
+}
+@keyframes logoShine {
+    from { stroke-dashoffset: 0; }
+    to { stroke-dashoffset: -88; }
+}
+
+/* ===== Подпись ===== */
+.logo__text {
+    display: inline-flex;
+    align-items: baseline;
+    transition: transform 0.5s var(--ease-out);
+    position: relative;
+}
+.logo__text span {
+    color: var(--color-accent);
+    display: inline-block;
+    transition: transform 0.5s var(--ease-out);
+}
+
+/* Тонкая линия под подписью — только на hover */
+.logo__underline {
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, transparent, var(--color-accent), var(--color-secondary), transparent);
+    background-size: 200% 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s var(--ease-out);
+    pointer-events: none;
+}
+.logo:hover .logo__underline {
+    transform: scaleX(1);
+    animation: logoUnderlineFlow 2.4s linear infinite;
+}
+@keyframes logoUnderlineFlow {
+    from { background-position: 0% 0; }
+    to { background-position: 200% 0; }
+}
+
+/* ===== Пасхалка: орбиты и частицы на hover (desktop) ===== */
+.logo__orbit {
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s var(--ease-out);
+}
+.logo__orbit-dot {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    margin: -3px 0 0 -3px;
+    transform-origin: 0 0;
+    opacity: 0;
+    transition: opacity 0.3s var(--ease-out);
+}
+.logo__orbit-dot--1 { background: var(--color-accent); }
+.logo__orbit-dot--2 { background: var(--color-secondary); }
+.logo__orbit-dot--3 { background: var(--color-accent); width: 4px; height: 4px; margin: -2px 0 0 -2px; }
+
+.logo:hover .logo__orbit { opacity: 1; }
+.logo:hover .logo__orbit-dot { opacity: 1; }
+.logo:hover .logo__orbit-dot--1 {
+    animation: logoOrbit1 3s linear infinite;
+}
+.logo:hover .logo__orbit-dot--2 {
+    animation: logoOrbit2 4s linear infinite reverse;
+}
+.logo:hover .logo__orbit-dot--3 {
+    animation: logoOrbit3 5s linear infinite;
+}
+
+@keyframes logoOrbit1 {
+    from { transform: rotate(0deg) translateX(28px) rotate(0deg); }
+    to { transform: rotate(360deg) translateX(28px) rotate(-360deg); }
+}
+@keyframes logoOrbit2 {
+    from { transform: rotate(0deg) translateX(32px) rotate(0deg); }
+    to { transform: rotate(360deg) translateX(32px) rotate(-360deg); }
+}
+@keyframes logoOrbit3 {
+    from { transform: rotate(0deg) translateX(24px) rotate(0deg); }
+    to { transform: rotate(360deg) translateX(24px) rotate(-360deg); }
+}
+
+/* При hover: сам марк чуть поворачивается, подпись сдвигается */
+.logo:hover .logo__mark {
+    transform: rotate(-12deg) scale(1.05);
+}
+.logo:hover .logo__text {
+    transform: translateX(3px);
+}
+.logo:hover .logo__text span {
+    transform: rotate(-8deg) translateY(-1px);
+}
+
+/* ===== Мобилка и тач ===== */
+@media (max-width: 768px) {
+    .logo { font-size: 17px; gap: 9px; }
+    .logo__mark { width: 32px; height: 32px; }
+    .logo__orbit { display: none; }
+    .logo:hover .logo__mark { transform: none; }
+    .logo:hover .logo__text { transform: none; }
+    .logo:hover .logo__text span { transform: none; }
+}
+@media (max-width: 480px) {
+    .logo { font-size: 16px; gap: 8px; }
+    .logo__mark { width: 28px; height: 28px; }
+}
+@media (hover: none) {
+    .logo__orbit { display: none; }
+    .logo:hover .logo__mark { transform: none; }
+    .logo:hover .logo__text,
+    .logo:hover .logo__text span { transform: none; }
+    .logo__underline { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .logo__arc, .logo__core, .logo__shine, .logo__underline,
+    .logo:hover .logo__orbit-dot { animation: none !important; }
+}

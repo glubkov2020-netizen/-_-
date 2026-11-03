@@ -1,0 +1,202 @@
+.site-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+    contain: strict;
+    background:
+        radial-gradient(1600px 1000px at 12% -20%, rgba(232,184,109,0.16), transparent 55%),
+        radial-gradient(1200px 900px at 110% 10%, rgba(123,168,160,0.14), transparent 55%),
+        radial-gradient(900px 700px at 50% 120%, rgba(232,184,109,0.10), transparent 60%),
+        linear-gradient(180deg, #FAF8F4 0%, #F4F1EB 45%, #EFEBE3 100%);
+}
+
+/* ===== Мягкие орбы без filter: blur — только радиальные градиенты ===== */
+.site-bg__orb {
+    position: absolute;
+    border-radius: 50%;
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+    pointer-events: none;
+}
+.site-bg__orb--1 {
+    width: 900px; height: 900px;
+    background: radial-gradient(circle, rgba(232,184,109,0.32) 0%, rgba(232,184,109,0.12) 35%, transparent 70%);
+    top: -320px; left: -260px;
+    animation: orbFloat1 32s ease-in-out infinite;
+}
+.site-bg__orb--2 {
+    width: 800px; height: 800px;
+    background: radial-gradient(circle, rgba(123,168,160,0.28) 0%, rgba(123,168,160,0.10) 35%, transparent 70%);
+    top: 18%; right: -280px;
+    animation: orbFloat2 38s ease-in-out infinite;
+    will-change: auto;
+}
+.site-bg__orb--3 {
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(232,184,109,0.22) 0%, rgba(232,184,109,0.08) 35%, transparent 70%);
+    bottom: -260px; left: 22%;
+    animation: orbFloat3 44s ease-in-out infinite;
+    will-change: auto;
+}
+.site-bg__orb--4 {
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(123,168,160,0.20) 0%, rgba(123,168,160,0.06) 35%, transparent 70%);
+    top: 48%; left: 6%;
+    animation: orbFloat4 30s ease-in-out infinite;
+    will-change: auto;
+}
+.site-bg__orb--5 { display: none; }
+
+@keyframes orbFloat1 {
+    0%, 100% { transform: translate3d(0, 0, 0); }
+    50% { transform: translate3d(60px, 40px, 0); }
+}
+@keyframes orbFloat2 {
+    0%, 100% { transform: translate3d(0, 0, 0); }
+    50% { transform: translate3d(-50px, 30px, 0); }
+}
+@keyframes orbFloat3 {
+    0%, 100% { transform: translate3d(0, 0, 0); }
+    50% { transform: translate3d(40px, -50px, 0); }
+}
+@keyframes orbFloat4 {
+    0%, 100% { transform: translate3d(0, 0, 0); }
+    50% { transform: translate3d(30px, -20px, 0); }
+}
+
+/* ===== «Ткань» из линий ===== */
+.site-bg__grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(31,58,61,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(31,58,61,0.035) 1px, transparent 1px),
+        linear-gradient(115deg, rgba(123,168,160,0.05) 1px, transparent 1px);
+    background-size: 80px 80px, 80px 80px, 140px 140px;
+    mask-image: radial-gradient(ellipse at 50% 40%, #000 15%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse at 50% 40%, #000 15%, transparent 75%);
+    opacity: 0.9;
+    transform: translate3d(calc(var(--mx, 0) * -4px), calc(var(--my, 0) * -4px), 0);
+    transition: transform 0.2s ease-out;
+}
+
+/* ===== Пылинки: 12, без box-shadow ===== */
+.site-bg__dust { position: absolute; inset: 0; pointer-events: none; }
+.site-bg__dust span {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    opacity: 0;
+    animation: dustRise 20s linear infinite;
+    will-change: transform, opacity;
+}
+.site-bg__dust span:nth-child(n+13) { display: none; }
+.site-bg__dust span:nth-child(1)  { left: 8%;  top: 90%; animation-delay: 0s; }
+.site-bg__dust span:nth-child(2)  { left: 18%; top: 92%; animation-delay: 2.5s; }
+.site-bg__dust span:nth-child(3)  { left: 30%; top: 88%; animation-delay: 5s; }
+.site-bg__dust span:nth-child(4)  { left: 42%; top: 94%; animation-delay: 1.8s; }
+.site-bg__dust span:nth-child(5)  { left: 54%; top: 90%; animation-delay: 4.2s; }
+.site-bg__dust span:nth-child(6)  { left: 66%; top: 92%; animation-delay: 3.2s; }
+.site-bg__dust span:nth-child(7)  { left: 78%; top: 88%; animation-delay: 6.4s; }
+.site-bg__dust span:nth-child(8)  { left: 88%; top: 94%; animation-delay: 0.6s; }
+.site-bg__dust span:nth-child(9)  { left: 24%; top: 84%; animation-delay: 7.2s; }
+.site-bg__dust span:nth-child(10) { left: 48%; top: 80%; animation-delay: 8s; }
+.site-bg__dust span:nth-child(11) { left: 72%; top: 82%; animation-delay: 5.4s; }
+.site-bg__dust span:nth-child(12) { left: 92%; top: 86%; animation-delay: 2s; }
+
+@keyframes dustRise {
+    0%   { transform: translate3d(0, 0, 0); opacity: 0; }
+    10%  { opacity: 0.9; }
+    90%  { opacity: 0.6; }
+    100% { transform: translate3d(20px, -120vh, 0); opacity: 0; }
+}
+
+/* ===== Виньетка ===== */
+.site-bg__vignette {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(ellipse at center, transparent 45%, rgba(31,58,61,0.07) 100%);
+}
+
+/* ===== Тёмная тема ===== */
+[data-theme="dark"] .site-bg {
+    background:
+        radial-gradient(1600px 1000px at 12% -20%, rgba(232,184,109,0.10), transparent 55%),
+        radial-gradient(1200px 900px at 110% 10%, rgba(123,168,160,0.10), transparent 55%),
+        linear-gradient(180deg, #0F171B 0%, #0C1316 60%, #0A1012 100%);
+}
+[data-theme="dark"] .site-bg__orb--1 {
+    background: radial-gradient(circle, rgba(232,184,109,0.22) 0%, rgba(232,184,109,0.08) 35%, transparent 70%);
+}
+[data-theme="dark"] .site-bg__orb--2 {
+    background: radial-gradient(circle, rgba(123,168,160,0.20) 0%, rgba(123,168,160,0.06) 35%, transparent 70%);
+}
+[data-theme="dark"] .site-bg__orb--3 {
+    background: radial-gradient(circle, rgba(232,184,109,0.16) 0%, rgba(232,184,109,0.05) 35%, transparent 70%);
+}
+[data-theme="dark"] .site-bg__orb--4 {
+    background: radial-gradient(circle, rgba(123,168,160,0.16) 0%, rgba(123,168,160,0.05) 35%, transparent 70%);
+}
+[data-theme="dark"] .site-bg__grid {
+    background-image:
+        linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px),
+        linear-gradient(115deg, rgba(123,168,160,0.06) 1px, transparent 1px);
+}
+[data-theme="dark"] .site-bg__vignette {
+    background: radial-gradient(ellipse at center, transparent 45%, rgba(0,0,0,0.4) 100%);
+}
+
+/* ===== Мобилка: лёгкий режим ===== */
+@media (max-width: 768px) {
+    .site-bg__orb--3,
+    .site-bg__orb--4 { display: none; }
+    .site-bg__dust span:nth-child(n+7) { display: none; }
+    .site-bg__dust span { animation-duration: 24s; width: 3px; height: 3px; }
+    .site-bg__grid { background-size: 64px 64px, 64px 64px, 100px 100px; }
+    .site-bg__orb { will-change: auto; }
+}
+
+@media (hover: none) {
+    .site-bg__dust span { animation: none; opacity: 0.35; }
+    .site-bg__grid { transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .site-bg__orb, .site-bg__dust span { animation: none !important; }
+    .site-bg__dust span { opacity: 0.3; }
+    .site-bg__grid { transform: none !important; }
+}
+
+/* ===== ЖЁСТКИЙ ЛЁГКИЙ РЕЖИМ НА МОБИЛКЕ ===== */
+@media (max-width: 768px), (hover: none) {
+    .site-bg {
+        background:
+            radial-gradient(1200px 800px at 12% -20%, rgba(232,184,109,0.14), transparent 55%),
+            radial-gradient(900px 700px at 110% 10%, rgba(123,168,160,0.12), transparent 55%),
+            linear-gradient(180deg, #FAF8F4 0%, #F4F1EB 50%, #EFEBE3 100%);
+    }
+    .site-bg__orb { display: none !important; animation: none !important; }
+    .site-bg__dust { display: none !important; }
+    .site-bg__grid {
+        transform: none !important;
+        transition: none !important;
+        background-size: 56px 56px, 56px 56px, 80px 80px;
+        opacity: 0.7;
+    }
+    .site-bg__vignette {
+        background: radial-gradient(ellipse at center, transparent 55%, rgba(31,58,61,0.05) 100%);
+    }
+
+    [data-theme="dark"] .site-bg {
+        background:
+            radial-gradient(1200px 800px at 12% -20%, rgba(232,184,109,0.08), transparent 55%),
+            radial-gradient(900px 700px at 110% 10%, rgba(123,168,160,0.08), transparent 55%),
+            linear-gradient(180deg, #0F171B 0%, #0C1316 60%, #0A1012 100%);
+    }
+}

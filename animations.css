@@ -1,0 +1,77 @@
+@keyframes pulseDot {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(232,184,109,0.6); }
+    50% { box-shadow: 0 0 0 8px rgba(232,184,109,0); }
+}
+@keyframes floatSlow {
+    0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+    50% { transform: translate3d(-20px, 20px, 0) scale(1.04); }
+}
+@keyframes fadeUp {
+    from { opacity: 0; transform: translate3d(0, 20px, 0); }
+    to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+    transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+    will-change: opacity, transform;
+}
+.reveal.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    will-change: auto;
+}
+.reveal--delay-1 { transition-delay: 0.06s; }
+.reveal--delay-2 { transition-delay: 0.12s; }
+.reveal--delay-3 { transition-delay: 0.18s; }
+.reveal--delay-4 { transition-delay: 0.24s; }
+
+.hero__content > * { animation: fadeUp 0.7s var(--ease-out) both; }
+.hero__content > *:nth-child(1) { animation-delay: 0.04s; }
+.hero__content > *:nth-child(2) { animation-delay: 0.1s; }
+.hero__content > *:nth-child(3) { animation-delay: 0.16s; }
+.hero__content > *:nth-child(4) { animation-delay: 0.22s; }
+.hero__content > *:nth-child(5) { animation-delay: 0.28s; }
+.hero__visual { animation: fadeIn 1s var(--ease-out) 0.2s both; }
+
+.page-hero__inner > * { animation: fadeUp 0.7s var(--ease-out) both; }
+.page-hero__inner > *:nth-child(1) { animation-delay: 0.04s; }
+.page-hero__inner > *:nth-child(2) { animation-delay: 0.1s; }
+.page-hero__inner > *:nth-child(3) { animation-delay: 0.16s; }
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+    .reveal { opacity: 1; transform: none; }
+}
+
+@media (max-width: 768px), (hover: none) {
+    .reveal,
+    .reveal.is-visible {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+        will-change: auto !important;
+    }
+    .hero__content > *,
+    .hero__visual,
+    .page-hero__inner > * {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+    .result__decor,
+    .hero__decor,
+    .hero__photo-wrap {
+        animation: none !important;
+    }
+}

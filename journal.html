@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Журнал — Образовательный консультант</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/background.css?v=8">
+    <link rel="stylesheet" href="css/layout.css?v=8">
+    <link rel="stylesheet" href="css/components.css?v=8">
+    <link rel="stylesheet" href="css/logo.css?v=1">
+    <link rel="stylesheet" href="css/animations.css?v=8">
+    <link rel="stylesheet" href="css/admin.css?v=8">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/theme-switch.css">
+    <link rel="stylesheet" href="css/cookie.css">
+    <link rel="stylesheet" href="css/toast.css">
+<link rel="stylesheet" href="css/search.css">
+<link rel="stylesheet" href="css/chatbot.css?v=8">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="page-journal">
+    <div class="site-bg" aria-hidden="true">
+        <div class="site-bg__orb site-bg__orb--1"></div>
+        <div class="site-bg__orb site-bg__orb--2"></div>
+        <div class="site-bg__orb site-bg__orb--3"></div>
+        <div class="site-bg__orb site-bg__orb--4"></div>
+        <div class="site-bg__orb site-bg__orb--5"></div>
+        <div class="site-bg__grid"></div>
+        <div class="site-bg__dust">
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="site-bg__vignette"></div>
+    </div>
+
+    
+    <header class="header" id="header">
+        <div class="container header__inner">
+            <a href="index.html" class="logo" aria-label="Образ Я — на главную">
+                <span class="logo__mark" aria-hidden="true">
+                    <svg viewBox="0 0 40 40">
+                        <defs>
+                            <linearGradient id="logoGradA" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#E8B86D"/>
+                                <stop offset="100%" stop-color="#D9A44F"/>
+                            </linearGradient>
+                            <linearGradient id="logoGradB" x1="100%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="#7BA8A0"/>
+                                <stop offset="100%" stop-color="#5C6B6E"/>
+                            </linearGradient>
+                            <radialGradient id="logoGradCore" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" stop-color="#E8B86D"/>
+                                <stop offset="100%" stop-color="#D9A44F"/>
+                            </radialGradient>
+                        </defs>
+                        <path class="logo__arc logo__arc--outer" d="M 20 4 A 16 16 0 1 1 19.99 4" />
+                        <path class="logo__arc logo__arc--mid" d="M 20 9 A 11 11 0 1 0 20.01 9" />
+                        <path class="logo__arc logo__arc--inner" d="M 20 15 A 5 5 0 1 1 19.99 15" />
+                        <path class="logo__shine" d="M 20 4 A 16 16 0 0 1 36 20" />
+                        <circle class="logo__core" cx="20" cy="20" r="2.4"/>
+                    </svg>
+                </span>
+                <span class="logo__orbit" aria-hidden="true">
+                    <span class="logo__orbit-dot logo__orbit-dot--1"></span>
+                    <span class="logo__orbit-dot logo__orbit-dot--2"></span>
+                    <span class="logo__orbit-dot logo__orbit-dot--3"></span>
+                </span>
+                <span class="logo__text">Образ<span>Я</span>
+                    <span class="logo__underline"></span>
+                </span>
+            </a>
+            <nav class="nav" id="nav">
+                <a href="about.html" class="nav__link">О себе</a>
+                <a href="index.html#directions" class="nav__link">Направления</a>
+                <a href="index.html#services" class="nav__link">Услуги</a>
+                <a href="journal.html" class="nav__link is-active">Журнал</a>
+                <a href="reviews.html" class="nav__link">Отзывы</a>
+                <a href="documents.html" class="nav__link">Документы</a>
+                <a href="index.html#contact" class="nav__link nav__link--cta">Записаться</a>
+            </nav>
+            <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+    <main>
+        <section class="page-hero">
+            <div class="container page-hero__inner">
+                <p class="section__eyebrow">Журнал</p>
+                <h1 class="page-hero__title"></h1>
+                <p class="page-hero__text"></p>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div class="journal__grid"></div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__col"><a href="index.html" class="footer__logo"><span class="logo__mark"></span> Образ<span>Я</span></a><p>Образовательный консультант.</p></div>
+                <div class="footer__col"><h4>Навигация</h4><a href="about.html">О себе</a><a href="journal.html">Журнал</a><a href="reviews.html">Отзывы</a><a href="documents.html">Документы</a></div>
+                <div class="footer__col"><h4>Контакты</h4><a href="#" class="footer-contact-tg">Telegram</a><a href="#" class="footer-contact-wa">WhatsApp</a><a href="mailto:hello@example.com" class="footer-contact-email">hello@example.com</a></div>
+            </div>
+            <div class="footer__bottom"><p>© 2025 Образовательный консультант.</p><a href="documents.html">Политика конфиденциальности</a></div>
+        </div>
+    </footer>
+    <script src="js/data.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/reveal.js"></script>
+    <script src="js/scroll-restore.js"></script>
+    <script src="js/pdf-viewer.js"></script>
+    <script src="js/render.js?v=5"></script>
+    <script src="js/spotlight.js?v=8"></script>
+<script src="js/admin.js?v=5"></script>
+<script src="js/toast.js"></script>
+<script src="js/search.js"></script>
+<script src="js/chatbot.js?v=3"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/cookie.js"></script>
+    <script src="js/analytics.js"></script>
+    <script src="js/bg-parallax.js?v=8"></script>
+</body>
+</html>
