@@ -2,10 +2,8 @@ backend:
   name: github
   repo: glubkov2020-netizen/-_-
   branch: main
-  base_url: https://obraz-auth.vercel.app
-  auth_endpoint: auth
-
-# Для картинок используем абсолютные пути (с учётом твоего репозитория -_-)
+  base_url: "" # отключаем прокси, так как токен вшит в index.html
+  
 media_folder: "assets/images/uploads"
 public_folder: "/-_-/assets/images/uploads"
 
@@ -23,7 +21,7 @@ collections:
           - { label: "Подзаголовок", name: "subtitle", widget: "text" }
           - { label: "Текст кнопки", name: "btn_primary", widget: "string" }
           - { label: "Фото", name: "image", widget: "image" }
-      
+
       - name: "about"
         label: "Блок 'О себе'"
         file: "content/about.json"
