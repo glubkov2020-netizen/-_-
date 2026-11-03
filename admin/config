@@ -1,0 +1,68 @@
+backend:
+  name: github
+  repo: glubkov2020-netizen/-_-
+  branch: main
+  base_url: https://obraz-cms-proxy.vercel.app
+  auth_endpoint: auth
+
+# Куда будут сохраняться картинки, которые она загрузит
+media_folder: "assets/images/uploads"
+public_folder: "/assets/images/uploads"
+
+# Язык интерфейса (русский)
+locale: 'ru'
+
+# Коллекции (вкладки в админке)
+collections:
+  # 1. Главная страница (Hero, О себе, Контакты)
+  - name: "settings"
+    label: "Главная страница"
+    files:
+      - name: "hero"
+        label: "Шапка сайта (Hero)"
+        file: "content/hero.json"
+        fields:
+          - { label: "Заголовок", name: "title", widget: "string" }
+          - { label: "Подзаголовок", name: "subtitle", widget: "text" }
+          - { label: "Текст кнопки", name: "btn_primary", widget: "string" }
+          - { label: "Фото", name: "image", widget: "image" }
+      
+      - name: "about"
+        label: "Блок 'О себе'"
+        file: "content/about.json"
+        fields:
+          - { label: "Заголовок", name: "title", widget: "string" }
+          - { label: "Текст", name: "text", widget: "markdown" }
+
+      - name: "contact"
+        label: "Контакты"
+        file: "content/contact.json"
+        fields:
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Telegram", name: "telegram", widget: "string" }
+          - { label: "WhatsApp", name: "whatsapp", widget: "string" }
+
+  # 2. Новости / Журнал
+  - name: "journal"
+    label: "Журнал (Новости)"
+    folder: "content/journal"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Заголовок", name: "title", widget: "string" }
+      - { label: "Дата", name: "date", widget: "datetime" }
+      - { label: "Краткое описание", name: "excerpt", widget: "text" }
+      - { label: "Текст", name: "body", widget: "markdown" }
+      - { label: "Обложка", name: "cover", widget: "image", required: false }
+
+  # 3. Отзывы
+  - name: "reviews"
+    label: "Отзывы"
+    folder: "content/reviews"
+    create: true
+    fields:
+      - { label: "Имя автора", name: "name", widget: "string" }
+      - { label: "Роль (например, 'Мама подростка')", name: "role", widget: "string" }
+      - { label: "Оценка (1-5)", name: "rating", widget: "number", default: 5, min: 1, max: 5 }
+      - { label: "Текст отзыва", name: "text", widget: "text" }
+      - { label: "Опубликовано?", name: "status", widget: "select", options: ["pending", "published"], default: "published" }
